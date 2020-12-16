@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+</head>
+
+<body>
+    <form action="#" onsubmit="cal()">
+        <input type="number" id="tot" placeholder="Enter Tot Marks">
+        <br><br>
+        <input type="number" id="obt" placeholder="Enter Obt Marks">
+        <br><br>
+        <label>Percentage: <label id="per"></label></label>
+        <br>
+        <label>Grade: <label id="grade"></label></label>
+        <br><br>
+        <button>Show Result</button>
+    </form>
+</body>
+<script>
+    function cal(){
+        let tot = parseInt(document.getElementById("tot").value);
+        let obt = parseInt(document.getElementById("obt").value);
+        let per = obt*100/tot;
+        document.getElementById("per").innerHTML = per;
+        if(per >= 80 && per <= 100){
+            document.getElementById("grade").innerText = "A+"
+        }
+        else if(per >= 70 && per <= 79){
+            document.getElementById("grade").innerText = "A"
+        }
+        else if(per >= 60 && per <= 69){
+            document.getElementById("grade").innerText = "B"
+        }
+        else if(per >= 50 && per <= 59){
+            document.getElementById("grade").innerText = "C"
+        }
+        else{
+            document.getElementById("grade").innerText = "F"
+        }
+    }
+</script>
+
+</html>
